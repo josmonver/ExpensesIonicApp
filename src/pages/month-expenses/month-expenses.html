@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Gasto mensual</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let o of expenses" (click)="itemSelected($event, o)">
+        <ion-icon name="logo-euro" item-left></ion-icon>
+          {{ o.comment }}
+        <ion-badge item-right>{{ o.amount }}</ion-badge>
+    </button>  
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Total: {{ totalExpense }} €</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+
+<!--<button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon name="{{item.icon}}" item-left></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-right>
+        {{item.note}}
+      </div>
+    </button>-->
